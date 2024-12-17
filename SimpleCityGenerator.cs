@@ -19,6 +19,8 @@ namespace ArtNotes.SimpleCityGenerator
         public CitySample[] List1x1, List1x2, ListAngle, ListSqare;
 
         public bool DeletePreviousCity = true;
+        public bool useSelected2x2 = true; // Toggle to enable or disable using the selected 2x2 prefab
+        public bool useBossLevel = true;
 
         private int MapLength, CurrentBigSectorCount;
         private int[,] IntMap;
@@ -74,6 +76,16 @@ namespace ArtNotes.SimpleCityGenerator
         if (cityManager != null)
         {
             cityManager.PlaceStartAndEnd();
+            if (useSelected2x2)
+            {
+                cityManager.PlaceSelected2x2();
+        
+            }
+               if (useBossLevel)
+            {
+                cityManager.PlaceBossLevel();
+            }
+            
         }
         else
         {
