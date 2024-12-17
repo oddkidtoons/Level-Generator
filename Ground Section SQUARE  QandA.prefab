@@ -796,7 +796,6 @@ MonoBehaviour:
   OnTimerEnd:
     m_PersistentCalls:
       m_Calls: []
-  failedText: LOSER!
   OnFailureEvent:
     m_PersistentCalls:
       m_Calls:
@@ -812,17 +811,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  failedText: LOSER!
   correctFeedbackDelay: 0
   correctFeedbackHideDelay: 1
   completionUIShowDelay: 3
   completionUIHideDelay: 5
-  scoreUIShowDelay: 1
   scoreUIHideDelay: 2
-  timerUIShowDelay: 0
   timerUIHideDelay: 2
   failureUIHideDelay: 2
+  resetDelay: 2
   platformSpawner: {fileID: 4541243108734683497}
   scoreManager: {fileID: 5186073311747298517}
+  puzzleTrigger: {fileID: 794992648519235473}
   countDown: 1
   timerDuration: 10
 --- !u!114 &4541243108734683497
@@ -1193,7 +1193,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7883561679497797438}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1251,6 +1251,33 @@ MonoBehaviour:
       - m_Target: {fileID: 4545265737176506223}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 6660054737797189053}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnTriggerReset:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6660054737797189053}
+        m_TargetAssemblyTypeName: UnityEngine.Renderer, UnityEngine
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
