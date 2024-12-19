@@ -26,7 +26,7 @@ namespace ArtNotes.SimpleCityGenerator
         private int[,] IntMap;
         private List<Vector2Int> Vacant;
 
-        private void Start()
+        private void Awake()
         {
             if (activationMode == ActivationMode.LevelStart)
             {
