@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using Unity.AI.Navigation;
 
 namespace ArtNotes.SimpleCityGenerator
 {
@@ -42,7 +43,7 @@ namespace ArtNotes.SimpleCityGenerator
             }
         }
 
-        public void Generate()
+       public void Generate()
 {
     try
     {
@@ -79,24 +80,34 @@ namespace ArtNotes.SimpleCityGenerator
             if (useSelected2x2)
             {
                 cityManager.PlaceSelected2x2();
-        
             }
-               if (useBossLevel)
+            if (useBossLevel)
             {
                 cityManager.PlaceBossLevel();
             }
-            
         }
         else
         {
             Debug.LogError("CityStartEndManager not found on the GameObject!");
         }
+
+        // Trigger NavMesh baking
+       DynamicNavMeshBaker navMeshBaker = GetComponent<DynamicNavMeshBaker>();
+if (navMeshBaker != null)
+{
+    navMeshBaker.BakeNavMesh();
+}
+else
+{
+    Debug.LogError("DynamicNavMeshBaker not found on the GameObject!");
+}
     }
     catch (System.Exception ex)
     {
         Debug.LogError($"Error during city generation: {ex.Message}. Stopping generation.");
     }
 }
+
 
 
         private void CalculateCityZone()
