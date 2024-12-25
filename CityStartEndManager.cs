@@ -12,7 +12,7 @@ public class CityStartEndManager : MonoBehaviour
     public GameObject startPrefab;
     public GameObject endPrefab;
     public GameObject selected2x2Prefab; // Selected 2x2 prefab to place
-    public bool useSelected2x2 = true; // Toggle to enable or disable using the selected 2x2 prefab
+    //public bool useSelected2x2 = true; // Toggle to enable or disable using the selected 2x2 prefab
 
     [Header("Boss Level Settings")]
     public GameObject bossPrefab; // Boss level prefab
@@ -20,22 +20,22 @@ public class CityStartEndManager : MonoBehaviour
 
     void Start()
     {
-        if (cityGenerator != null && cityGenerator.activationMode == SimpleCityGenerator.ActivationMode.LevelStart)
-        {
-            PlaceStartAndEnd();
+        //if (cityGenerator != null && cityGenerator.activationMode == SimpleCityGenerator.ActivationMode.LevelStart)
+       // {
+          //  PlaceStartAndEnd();
 
             // Only call PlaceSelected2x2 if the toggle is enabled and a prefab is assigned
-            if (useSelected2x2 && selected2x2Prefab != null)
-            {
-                PlaceSelected2x2();
-            }
+            //if (useSelected2x2 && selected2x2Prefab != null)
+           // {
+           //     PlaceSelected2x2();
+           // }
 
             // Place the Boss Level above the city center
-            if (bossPrefab != null)
-            {
-                PlaceBossLevel();
-            }
-        }
+          //  if (bossPrefab != null)
+          //  {
+          //      PlaceBossLevel();
+          //  }
+       // }
     }
 
     public void PlaceStartAndEnd()
